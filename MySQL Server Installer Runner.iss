@@ -4,7 +4,7 @@
 [Setup]
 AppName=MySQL Installer Runner
 AppVersion=0.1.0
-AppCopyright=© Ascensio System SIA 2019. All rights reserved
+AppCopyright=Â© Ascensio System SIA 2019. All rights reserved
 AppPublisher=Ascensio System SIA
 AppPublisherURL=https://www.onlyoffice.com/
 VersionInfoVersion=0.1.0
@@ -16,6 +16,7 @@ OutputBaseFilename="MySQL Installer Runner"
 OutputDir=/
 ArchitecturesAllowed=x64compatible
 ArchitecturesInstallIn64BitMode=x64compatible
+SignTool=byparam $p
 
 [Run]
 Filename: "{#BASE_DIR}\bin\mysqld.exe"; Parameters: "--initialize-insecure"; Flags: runhidden waituntilterminated
