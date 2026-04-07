@@ -37,7 +37,7 @@ if ([string]::IsNullOrWhiteSpace($File)) {
     throw "File parameter is required"
 }
 
-$env:OPENSSL_ENGINES = "set OPENSSL_ENGINES=C:\Program Files\Amazon\CloudHSM\bin"
+$env:OPENSSL_ENGINES = "C:\Program Files\Amazon\CloudHSM\bin"
 $FileSigned = "$env:TMP\tmp_signed"
 
 if (Test-Path "$FileSigned") {
