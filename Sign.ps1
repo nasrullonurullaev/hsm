@@ -9,23 +9,23 @@ param (
 $ErrorActionPreference = "Stop"
 $PSDefaultParameterValues['*:ErrorAction'] = "Stop"
 
-if($CertFile -eq "") {
+if ([string]::IsNullOrWhiteSpace($CertFile)) {
     if (Test-Path "env:WINDOWS_HSM_CERTIFICATE") {
         $CertFile = $env:WINDOWS_HSM_CERTIFICATE
     } else {
-        throw
+        throw "CertFile is not set and WINDOWS_HSM_CERTIFICATE is missing"
     }
 }
 
-if($HsmCreds -eq "") {
+if ([string]::IsNullOrWhiteSpace($HsmCreds)) {
     if (Test-Path "env:WINDOWS_HSM_USERPASS") {
         $HsmCreds = $env:WINDOWS_HSM_USERPASS
     } else {
-        throw
+        throw "HsmCreds is not set and WINDOWS_HSM_USERPASS is missing"
     }
 }
 
-if($TimestampServer -eq "") {
+if ([string]::IsNullOrWhiteSpace($TimestampServer)) {
     if (Test-Path "env:WINDOWS_TIMESTAMP_SERVER") {
         $TimestampServer = $env:WINDOWS_TIMESTAMP_SERVER
     } else {
@@ -33,8 +33,8 @@ if($TimestampServer -eq "") {
     }
 }
 
-if($File -eq "") {
-    throw
+if ([string]::IsNullOrWhiteSpace($File)) {
+    throw "File parameter is required"
 }
 
 $env:OPENSSL_ENGINES = "C:\Program Files\Amazon\CloudHSM\lib"
