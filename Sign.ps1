@@ -55,6 +55,7 @@ write "Sign: $File"
     -in "$File" `
     -out "$FileSigned" `
     -nolegacy `
+    -login `
     -h sha256
 if (-not $?) { throw }
 
