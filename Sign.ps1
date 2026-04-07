@@ -48,7 +48,7 @@ if (Test-Path "$FileSigned") {
 write "Sign: $File"
 & osslsigncode sign `
     -pkcs11engine "pkcs11" `
-    -pkcs11module "$env:OPENSSL_ENGINES\cloudhsm_pkcs11.dll" `
+    -pkcs11module "cloudhsm_pkcs11.dll" `
     -certs "$CertFile" `
     -key "pkcs11:token=hsm1;object=RSASignPriv1;pin-value=$HsmCreds" `
     -t "$TimestampServer" `
