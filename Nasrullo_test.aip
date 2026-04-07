@@ -49,7 +49,7 @@
     <ROW Path="&lt;AI_DICTS&gt;ui_en.ail"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.DigCertStoreComponent">
-    <ROW TimeStampUrl="http://timestamp.digicert.com" SignerDescription="[|ProductName]" SignOptions="7" SignTool="0" UseSha256="1" Store="User\MY" CustomToolPath="&lt;AI_SIGNTOOL_FOLDER&gt;signtool.exe" CustomToolCmdLine="powershell.exe -ExecutionPolicy Bypass -File signing-tool.ps1 -File "/>
+    <ROW TimeStampUrl="http://timestamp.digicert.com" SignerDescription="[|ProductName]" SignOptions="7" SignTool="0" UseSha256="1" Store="User\MY" CustomToolPath="C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" CustomToolCmdLine="-ExecutionPolicy Bypass -File D:\Jenkins\jobs\n_nurullaev_test\workspace\Sign.ps1 -File"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.FragmentComponent">
     <ROW Fragment="CommonUI.aip" Path="&lt;AI_FRAGS&gt;CommonUI.aip"/>
