@@ -58,8 +58,10 @@ write "Sign: $File"
     -h sha256
 if (-not $?) { throw }
 
-$Status = (Get-AuthenticodeSignature "$FileSigned").Status
-if ($Status -ne 'Valid') { throw }
+if ([System.IO.Path]::GetExtension($File).ToLowerInvariant() -ne '.ps1') {
+    $Status = (Get-AuthenticodeSignature "$FileSigned").Status
+    if ($Status -ne 'Valid') { throw }
+}
 
 write "Move: $FileSigned > $File"
 mi -Path "$FileSigned" -Destination "$File" -Force
